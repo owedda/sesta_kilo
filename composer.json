@@ -1,0 +1,34 @@
+{
+    "name": "dariuskasperavicius/clean",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kasperavicius",
+            "email": "darius.kasperavicius@kilo.health"
+        }
+    ],
+    "require": {
+        "webmozart/assert": "^1.11",
+        "illuminate/database": "^9.37"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.8",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "scripts": {
+        "phpcs": "./vendor/bin/phpcs --standard=phpcs.xml.dist",
+        "phpunit": "./vendor/bin/phpunit -c ./phpunit.xml.dist",
+        "phpstan": "./vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=2G",
+        "fix": "./vendor/bin/phpcbf",
+        "all": [
+            "@phpunit",
+            "@phpstan",
+            "@phpcs"
+        ]
+    }
+}
